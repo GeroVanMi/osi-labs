@@ -32,6 +32,7 @@ def start_service():
 
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind((HOST, PORT))
+        print("Started log server. Now listening for entries.")
         s.listen()
         conn, addr = s.accept()
         with conn:
