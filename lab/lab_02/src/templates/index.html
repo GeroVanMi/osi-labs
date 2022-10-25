@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Browse Files</title>
+</head>
+<body>
+<ul>
+    {% for file in files %}
+    <li><a href="/static/upload/{{ file }}">{{ file }}</a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>

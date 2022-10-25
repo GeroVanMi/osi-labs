@@ -1,2 +1,4 @@
 .idea/
 *.csv
+
+/lab/lab_02/src/files/*
