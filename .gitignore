@@ -2,3 +2,8 @@
 *.csv
 
 /lab/lab_02/src/files/*
+
+*.db
+
+data.json
+output.png
