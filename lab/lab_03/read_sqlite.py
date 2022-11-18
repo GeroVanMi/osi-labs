@@ -1,6 +1,5 @@
-import sqlite3
-from datetime import datetime
 import json
+import sqlite3
 
 con = sqlite3.connect("messages_copy.db")
 cursor = con.cursor()
@@ -16,7 +15,7 @@ query = """
 """
 
 cursor.execute(query)
-data = cursor.fetchall()[0]
+data = cursor.fetchone()
 cursor.close()
 
 print(data)
