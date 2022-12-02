@@ -19,6 +19,7 @@ with DAG('mydag', default_args=default_args, catchup=False, schedule='0 * * * *'
         task_id='starttask',
         dag=dag
     )
+
     calculate_20 = PythonOperator(
         task_id='calculate_20',
         python_callable=calculate_function,
@@ -26,6 +27,7 @@ with DAG('mydag', default_args=default_args, catchup=False, schedule='0 * * * *'
             'x': 20
         },
         dag=dag)
+
     calculate_99 = PythonOperator(
         task_id='calculate_99',
         python_callable=calculate_function,
@@ -33,4 +35,5 @@ with DAG('mydag', default_args=default_args, catchup=False, schedule='0 * * * *'
             'x': 99
         },
         dag=dag)
+
     start_task >> [calculate_20, calculate_99]

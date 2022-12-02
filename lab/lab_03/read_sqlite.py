@@ -7,15 +7,14 @@ print("Connected to database")
 
 query = """
     SELECT 
-        COUNT(id) as n_records,
-        COUNT(c2attachmentNames) as n_attachments
+        *
     FROM messages 
     LEFT JOIN messagesText_Content mTC ON mTC.docid = messages.id AND c2attachmentNames != ''
     WHERE date IS NOT NULL
 """
 
 cursor.execute(query)
-data = cursor.fetchone()
+data = cursor.fetchall()
 cursor.close()
 
 print(data)
